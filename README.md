@@ -2,37 +2,26 @@
 A python-based analysis tool for MUSE data
 
 
-"""
-This is an example of MUSEpy commands.
+#This is an example of MUSEpy commands.
+#Starting from a fully reduced MUSE datacube (DATA extension), obtain [SII]6731, H_alpha and H_beta integrated intensity and velocity maps, compute their line ratio, and make nice figures from these.
 
-Starting from a fully reduced MUSE datacube (DATA extension), obtain [SII]6731, H_alpha and H_beta integrated intensity and velocity maps, compute their line ratio, and make nice figures from these.
-"""
 
 import musepy as mp
 
-
-"""
-Step 1: make integrated intensity maps
-"""
+#Step 1: make integrated intensity maps
 mp.moments('cube.fits', [4861.33, 6562.8, 6730.85], ['Hb', 'Ha', 'SII'], 0, save_file=True)
 
 
-"""
-Step 2: make velocity maps, using vacuum wavelengths for the conversion
-"""
+#Step 2: make velocity maps, using vacuum wavelengths for the conversion
 mp.moments('SN_cube.fits', [4862.69, 6564.61, 6732.71], ['Hb', 'Ha', 'SII'], 1, save_file=True)
 
 
-"""
-Step 3: make line ratio map
-"""
+#Step 3: make line ratio map
 mp.two_line_ratio('Ha_moment0.fits', 'Hb_moment0.fits', save_fits=True, filename='Ha_Hb.fits')
 mp.two_line_ratio('SII_moment0.fits', 'Ha_moment0.fits', save_fits=True, filename='SII_Ha.fits')
 
 
-"""
-Step 4: make pretty pictures
-"""
+#Step 4: make pretty pictures
 mp.figure('Ha_moment0.fits', save_file=True, output_file='Ha_moment0.png', minmax=False)
 mp.figure('Ha_moment1.fits', save_file=True, output_file='Ha_moment1.png', minmax=False)
 mp.figure('SII_moment0.fits', save_file=True, output_file='SII_moment0.png', minmax=False)
