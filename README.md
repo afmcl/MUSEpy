@@ -1,4 +1,4 @@
-# MUSEpy A python-based analysis tool for MUSE data
+# MUSEpy: a python-based analysis tool for MUSE data
 
 
 #This is an example of MUSEpy commands.
