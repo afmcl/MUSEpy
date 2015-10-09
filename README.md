@@ -1,5 +1,4 @@
-# MUSEpy
-A python-based analysis tool for MUSE data
+# MUSEpy A python-based analysis tool for MUSE data
 
 
 #This is an example of MUSEpy commands.
@@ -13,7 +12,7 @@ mp.moments('cube.fits', [4861.33, 6562.8, 6730.85], ['Hb', 'Ha', 'SII'], 0, save
 
 
 #Step 2: make velocity maps, using vacuum wavelengths for the conversion
-mp.moments('SN_cube.fits', [4862.69, 6564.61, 6732.71], ['Hb', 'Ha', 'SII'], 1, save_file=True)
+mp.moments('cube.fits', [4862.69, 6564.61, 6732.71], ['Hb', 'Ha', 'SII'], 1, save_file=True)
 
 
 #Step 3: make line ratio map
