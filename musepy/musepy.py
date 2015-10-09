@@ -168,42 +168,6 @@ def three_line_ratio(line1, line2, line3, header, savefits, filename, mean):
     return ratio
 
 
-def four_line_ratio(line1, line2, line3, line4, header, savefits, filename, mean):
-    """
-    Ratio of the type (L1+L2)/(L3+L4) if mean=False
-    or of the type L12/L34 if mean=True, where L12 = (L1+L2)/2 and L34 = (L3+L4)/2
-    
-    line1: str or moment object
-        Filename of nominator line 1
-
-    line2: str or moment object
-        Filename of denominator line 2
-
-    line2: str or moment object
-        Filename of denominator line 
-
-    header: .txt file
-        The header to be used when saving the ratio to a fits file.
-        If not specified, the header of line 1 will be used.    
-
-    filename: str
-        The name of the fits file to be saved 
-
-    Warning: works only if line1, line2, line3 and line4 have the same shape!
-    
-    """
-    l1, l2 = fits.getdata(line1), fits.getdata(line2)
-    hd = fits.getheader(line1)
-    if mean==True:
-        ratio = ((l1+l2)/2.)/((l3+l4)/2.)
-    if mean==False:
-        ratio = (l1+l2)/(l3+l4)
-
-    if savefits==True:
-        ff = fits.PrimaryHDU(data=ratio, header=hd)
-        ff.writeto(filename, clobber=True)
-
-    return ratio
 
 
 def overheads(NPT, DIT, NDIT):
