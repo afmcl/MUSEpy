@@ -65,7 +65,7 @@ def figure(image, colorbar=True, colorbar_text='', save_file=False, output_file=
 
 def moments(cube_fits, line_values, line_names, moment, save_file=False):
     """
-    cubes: str
+    cube: str
         The datacube in fits format to open
 
     line_values: list of floats
@@ -182,3 +182,29 @@ def overheads(NPT, DIT, NDIT):
     """
     ov = 360. + 120. + NPT*NDIT*(DIT + 80. + 15.)
     print 'Telescope time in h = ', ov/3600.
+
+
+def subcube(cube_fits, region,  save_file=False, filename=''):
+
+    """
+    cube: str
+        The datacube in fits format to open
+        
+    region: str
+        Filename of the ds9 region file
+
+    save_file: bool, optional    
+
+    filename: str, optional
+        The name of the new fits cube to be saved 
+
+    Example:
+        mp.subcube('cube.fits', 'myregion.reg', save_file=True, filename='sub_cube.fits')
+    
+    """
+    
+    c = SpectralCube.read(cube)
+    region_list = pyregion.open(region)
+    sub_cube = c.subcube_from_ds9region(region_list)
+    if save_file==True:
+        sub_cube.write(filename, format='fits',overwrite=True)
