@@ -14,7 +14,7 @@ class MUSEpy:
 from astropy.io import fits
 from spectral_cube import SpectralCube
 from astropy import units as u
-import aplpy
+import aplpy, pyregion
 
 
 def figure(image, colorbar=True, colorbar_text='', save_file=False, output_file='out.png', minmax=False, vmin='', vmax=''):
