@@ -203,7 +203,7 @@ def subcube(cube_fits, region,  save_file=False, filename=''):
     
     """
     
-    c = SpectralCube.read(cube)
+    c = SpectralCube.read(cube_fits)
     region_list = pyregion.open(region)
     sub_cube = c.subcube_from_ds9region(region_list)
     if save_file==True:
