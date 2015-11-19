@@ -29,7 +29,7 @@ mp.figure('Ha_moment0.fits', save_file=True, output_file='Ha_moment0.png', minma
 mp.figure('Ha_moment1.fits', save_file=True, output_file='Ha_moment1.png', minmax=False)
 mp.figure('SII_moment0.fits', save_file=True, output_file='SII_moment0.png', minmax=False)
 mp.figure('SII_moment1.fits', save_file=True, output_file='SII_moment1.png', minmax=True, vmin=-50, vmax=60)
-mp.figure('Ha_Hb.fits', save_file=True, output_file='Ha_Hb.png', minmax=False)
+mp.figure('Ha_Hb.fits', save_file=True, output_file='Ha_Hb.png', minmax=False)  
 mp.figure('SII_Ha.fits', save_file=True, output_file='SII_Ha.png', minmax=False)
 
 
