@@ -35,6 +35,7 @@ mp.figure('SII_Ha.fits', save_file=True, output_file='SII_Ha.png', minmax=False)
 
 
 Creation of a subcube based on a DS9 region file:
+
 mp.subcube('cube.fits', 'my_region.reg', save_file=True, filename='subcube.fits')
 
 
