@@ -33,5 +33,7 @@ mp.figure('Ha_Hb.fits', save_file=True, output_file='Ha_Hb.png', minmax=False)
 mp.figure('SII_Ha.fits', save_file=True, output_file='SII_Ha.png', minmax=False)
 
 
+Compute MUSE telescope time (including overheads), with the number of pointings (NPT), the exposure time per pointing in seconds(DIT) and the number of exposures per pointing (NDIT):
 
+mp.overheads(NPT=9, DIT=90, NDIT=3)
 
